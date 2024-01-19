@@ -1,0 +1,43 @@
+				for Loop
+				--------
+
+for loop is designed for iterating a specific number of times.
+
+syntax : 
+
+	for(initialization; condition; updation){
+	
+		//code to be repeated	
+
+	}
+
+example : 
+
+	for(int i = 0; i < 5; i++){
+	
+		printf("\%d ", i); // 0 1 2 3 4 
+	}
+
+
+
+
+dummy for loop : 
+
+	for(initialization; condition; updation);
+
+a dummy or empty for loop is  a concept where a for loop structure is used without any meaningful content inside its body.
+
+
+
+
+Initialization : sets the loop control variable to an initial value
+
+Condition : loop continues while the condition is true.
+		
+	    terminates when the condition becomes false
+
+updation : expression executed after each iteration 
+
+			often used to increment or decrement loop control variables.
+
+
