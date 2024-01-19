@@ -1,0 +1,44 @@
+		 		Switch-case
+				-----------
+
+switch statement is a control statement that provides a concise way to handle mutliple cases based on the value of an expression.
+
+syntax :
+
+	switch(expression){
+
+		case constant1:
+
+			// code to be executed if expression matches constant1 
+
+			break;
+
+		case constant2: 
+
+			// code to be executed if expression matches constant2		
+			
+			break;
+
+		default: 
+
+			// code to be executed if expression doesn;t match any case
+
+	}
+
+
+
+* the value in the switch must be an integer or character.
+
+* use break statements to prevent unintended code flow.
+
+* the default case is optional but often helpful.
+
+
+
+
+
+
+
+
+
+
