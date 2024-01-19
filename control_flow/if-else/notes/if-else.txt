@@ -1,0 +1,72 @@
+				if - else
+				---------
+
+* if - else statements is used for decision-making purpose.
+
+* it allows the execution of different code blocks based on a specified condition.
+
+
+
+syntax : 
+
+	if(condition){
+	
+		// code to execute if condition is true
+	}
+
+	else{
+		
+		// code to execute if condition is false
+	
+	}
+
+example : 
+
+	if(num % 2 == 0)
+
+		printf("number is even");
+
+	else
+		printf("number is odd");
+
+
+
+if the code block associated with 'if' or 'else' consists of only one statement, the curly braces '{}' are optional.
+
+
+if-else statement can be nested, allowing for multiple levels of decision making.
+
+
+multiple conditions can be checked in sequence using 'else if' blocks
+
+syntax : 
+
+	if(condition1){
+
+		// code for condition1
+
+	}
+
+	else if(condition2){
+	
+		// code for conditon2
+
+	}
+
+	else{
+
+		// code if all conditions are false
+
+	}
+
+
+if - else statement ensures that only one block of code is executed, based on the first true condition encountered.
+
+
+for simple 'if-else' constructs with single expression in each block , the ternary operator ' ? : ' provides a concise alternative.
+
+else block is optional
+
+
+
+
