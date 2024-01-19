@@ -1,0 +1,86 @@
+Arithmetic operators
+--------------------
+
+All the arithmetic operators are binay operators.
+
+        All these operators willn't modify the operands so we can supply the operands as constant or variables.
+
+        we can't use modulus (%) operator to the real numbers. If we use we will get error.
+
+
+example of arithmetic operators : +, -, /, *, %
+
+	int a = 2;
+
+	int b = 13;
+
+	int sum = a + b;
+
+	int quo = b / a -> quotient
+
+	int rem = b % a -> remainder
+
+	float b / a = 6.5 -> because of float
+
+	Any number modulus with 2 if we do if we get result is 0 then the number is  even. If we get result as 1 that number is odd. 
+
+
+
+When constants and variables of different types are mixed in a expression they are all convereted in to the same type.
+
+The compiler converts all operands up to the type of largest operand which is called as type promotion.
+
+First all characters and short integer values are automatically elevated to int. The process is called as integral promotion.
+
+Once this step has been completed all other conversions are done. Operation by operation as described in the following type conversion algorithm
+
+if an operand is long double
+
+then the second is converted to long double
+
+else if an operand is double
+
+then the second is converted to double
+
+else if the operand is float
+
+then the second is converted to float
+
+else if operand is an unsigned long
+
+then the second is converted to unsigned long
+
+else if operand is long
+
+then the second is converted to long
+
+else if an operand is unsigned int
+
+then the second is converted to unsigned int
+
+
+example: + - * / % 
+
+        int i;
+
+        char ch;
+
+        float f;
+
+        double d;
+
+        result = (ch / i) + (f * d) - (f + i);
+
+                    |          |         |
+
+                    int       double    float
+
+                     |           |        |
+
+                     - -       double   - -
+
+
+        This type conversion happens assignment right side only.
+
+        This type conversion is not permanent. It is temporary till expression gets solved.
+
