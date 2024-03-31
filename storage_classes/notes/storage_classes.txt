@@ -1,0 +1,291 @@
+Storage classes
+---------------
+
+1. Auto
+
+2. Static
+
+3. Extern
+
+4. Register
+
+All the above 4 keywords while dealing with variable we can use.
+
+* static and extern keywords we can use while dealing with functions also.
+
+* by observing storage class keywords compiler decides 4 important properties to that particular variable those are
+
+	* Default value
+
+	* Memory allocation (where the memory should be allocated)
+
+	* Scope (visiblity :- till what extend we can access the variable directly)
+
+	* Life :- when the memory is going to be allocated , when the  memory is going to be deallocated
+
+
+
+We can declare a variable in 2 places
+
+1. Global variable
+
+2. Local variable
+
+
+If we declare a local variable without providing any storage class type compiler considers as auto
+
+we can use auto keyword only for local variables. we cannot use global auto
+
+every auto variable is local variable but every local variable may not be auto
+
+
+In which case the local variable becomes auto ?
+
+ans : in 2 cases
+
+	1. if we write explicitly auto
+
+	2. if we don't mention any storage class
+
+	The default value of auto variable is unknown value or also known as Garbage value / Junk value / Unexpected value
+
+
+	auto variables are stored in respected function stack frame
+
+
+
+
+
+
+#include<stdio.h>
+
+void abc(void);
+
+void def(void);
+
+int main(){
+
+	int i = 10, j = 20;
+
+	abc();
+}
+
+void abc(void){
+
+	int k = 30, l = 40;
+
+	def();	
+}
+
+void def(void){
+
+	int m = 10, n = 60;
+
+}
+
+
+// each stack size depends upon variables return types and arguments
+
+
+stack for  main()  -> first stack
+
+stack for abc()    -> second stack
+
+stack for def()    -> third stack
+
+
+
+In the above example program when _start calls the main, then main function stack frame gets created. In stack frame i & j variables memory gets allocated. When main calls abc then abc function stack frame gets created. In  that stack frame k & l variables memory gets allocated. When abc calls def function stack frame gets created. In that stack frame m and n variables memory gets allocated.
+
+
+#include<stdio.h>
+
+int main(){
+
+	{
+		
+		int i = 10;
+
+	}
+
+	printf("i = %d\n", i);
+}
+
+Life of an auto variable starts when the function stack frame created and life ends when the function frames gets deallocated.
+
+
+when we are designing the function we shouldn't return the addresses of auto variable which we declared inside function. Why because the life of an autovariable ends when the function execution ends.
+
+
+correct
+-------
+
+void abc(int *);
+
+void main(){
+
+	int i = 10;
+
+	abc(&i);
+}
+
+void abc (int *p){
+
+					
+
+}
+
+wrong
+-----
+
+int *abc(void);
+
+void(main){
+
+	int *p;
+
+	p = abc();
+}
+
+int *abc(void){
+
+	int i = 10;
+
+	return &i;
+}
+
+
+
+
+while designing the function we shouldn't return the address -> False
+
+while designing the function we should not return the address of auto variable which we declared inside the function -> True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
