@@ -1,0 +1,28 @@
+				while
+				-----
+
+A 'while' loop in a c programming repeats a block of code as long as specified condition is true. The loop first checks the condition, executes the code if the condition is true, and then re-evaluated the condition, continuing until the condition becomes false.
+
+
+syntax : 
+
+	while(condition){
+
+		//code to be repeated
+
+	}
+
+
+	the condition is checked before entering the loop.
+
+	if the condition is true, the code inside the loop runs.
+
+	after the code, the condition is checked again.
+
+	if still true, the loop continues; otherwise, it stops.
+
+
+
+
+
+
