@@ -1,0 +1,93 @@
+call by value
+-------------
+
+while calling the function if we pass the value of the variable that method is called as call by value.
+
+example : 
+
+	#include<stdio.h>
+
+	void abc(int);
+
+	int main(){
+		
+		int num = 10;
+
+		printf("\num = %d\n", num);	// 10
+
+		abc(num);
+
+		printf("num = %d", num);	// 10
+
+		return 0;
+	}
+
+	void abc(int num){
+
+		num = 20;
+
+	}
+
+In call by value function can't modify the actual data.
+
+
+call by reference
+-----------------	
+
+while calling the function if we pass address of a variable, that method is called as call bt reference.
+
+example : 
+
+
+	#include<stdio.h>
+
+	void def(int *);
+
+	int main(){
+
+		int num = 10;
+
+		printf("\nnum  = %d\n", num);	// 10
+
+		def(&num);
+
+		printf("\nnum = %d\n", num);	// 20
+	}
+
+	void def(int *p){
+		
+		*p = 20;	
+	}
+
+in call by reference case the function can modify actual arguments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
