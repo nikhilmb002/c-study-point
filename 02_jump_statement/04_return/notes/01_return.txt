@@ -1,0 +1,71 @@
+return
+------
+
+The return statement serves two primary purposes
+
+1. Terminating a function : When a function encounters a return statement, the function's execution immediately stops, and control is transferred back to the calling function.
+
+
+2. Returning a value (optional) : The return statement can optionally be followed by an expression. This expression is evaluated, and value is returned to the calling function.
+
+
+Syntax :
+
+	return [expression];
+
+
+
+
+* [expression] part is optional. If omitted, the function returns nothing and indicates succesfull exection by returning 0;
+
+
+Return types
+------------
+
+* Every function in c must have a declared return type, which specifies the kind of data of the function can return (eg : int, float, void).
+
+* The datatype of the expression within the return statement must be compatible with the function's declared return type.
+
+
+
+example : 
+
+
+	void printHello(){
+
+		printf("Hello\n");
+
+		return; //optional return in void functions
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

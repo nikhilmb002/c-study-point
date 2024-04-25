@@ -1,0 +1,58 @@
+Continue
+--------
+
+continue statement is a jump statement used within loops(for, while, do-while) in c. It's used to skip the remaining code in the current iteration of the loop and jump directly to the next iteration.
+
+
+Working
+-------
+
+*When continue is encountered within a loop, the program control jumps back to the beginning of the current iteration.
+
+* Any remaining code in the current iteration is skipped.
+
+* The loop condition is evaluated again to determine if another iteration should occur.
+
+
+Use cases
+---------
+
+* Skipping specific values	
+
+* conditional processing
+
+
+syntax : 
+
+	continue;
+
+
+example :
+
+
+	for(int i = 0; i < 10; i++){
+	
+		if(i % 2 == 0)
+
+			continue;
+
+		printf("%d is odd\n", i);
+	}	
+
+
+
+
+* continue only affects the loop it's within.
+
+
+
+
+
+
+
+
+
+
+
+
+

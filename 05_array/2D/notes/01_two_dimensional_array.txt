@@ -1,0 +1,42 @@
+				2D Arrays
+				---------
+
+-> Array of Arrays
+
+-> Collection of 1D arrays
+
+-> Matrix
+
+
+How to declare a 2D array
+
+syntax : 
+	
+	datatype variable_name[rows][columns];
+
+
+rows -> no. of 1D arrays
+
+columns -> in each 1D array no. of elements 
+
+
+
+example : int b[2][3] = {{10, 20, 30}, {40, 50, 60}};
+
+	 
+	sizeof(b)       -> 24
+
+	sizeof(b[0])    -> 12
+
+	sizeof(b[0][0]) ->  4
+
+
+type of b -> 2D array
+
+How many elements in b ?
+
+two, b[0] and b[1]
+
+
+
+ 

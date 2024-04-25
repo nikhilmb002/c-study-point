@@ -1,0 +1,145 @@
+							Operators
+							---------
+
+* Every program need to process the data.
+
+* Processing means doing some operations on the data todo operations, every programming language will support a set of operators.
+
+* For every operator we need to supply inputs (that inputs are called as opearands).
+
+* Depends on how many operands we are supplying to that operator, operator are 3 types
+
+	1 -> unary operators
+
+	2 -> binary operators 
+
+	3 -> ternary operator
+
+
+
+
+
+Depends on what operation that operator is doing on the operands, operators again divided into sub types
+
+1. Arithmetic operators 
+
+	To perform arithmetic operations
+
+	+ - * / %
+
+2. Relational operators
+
+	to perform comparisons
+
+	> >= < <= == !=
+
+3. Logical operators
+
+	to perform logical operations
+	
+	&& || !
+
+4. Bitwise operators
+
+	to perform bitwise operations
+
+	& | ^
+
+5. Shift operators
+
+	to perfrom shift operation on bits
+	
+	>> <<
+
+6. Assignment operators
+
+	assign the values
+
+	=
+
+7. Increment and decrement 
+
+	++  -> increment operator increments operand by 1
+
+	--  -> decrements operator decrements by 1
+
+8. Size of operator
+
+	determines size of the expression or the data type specified
+
+9. Conditional operaor
+
+	works by evaluating conditon 
+
+	? : 
+
+10. Comma operator 
+
+	,
+
+11. Address operator 
+
+	return address of a variable
+
+	&
+
+12. Pointer operator
+
+	stores adress of other variables
+
+13. Index operator [] 
+
+
+
+
+	dot operator  .
+
+	arrow operator ->
+
+	group operator ()
+
+
+	compound assignment operator +=    -=    +=   /=
+
+
+
+Associativity of operators 
+--------------------------
+
+
+	Operator                           Associativity  
+
+
+       [] () . -> ++ --                    left to right  
+ 
+       ++ -- & * + - ~ ! sizeof            right to left  
+
+       (type)                              right to left
+
+       * / %                               left to right
+
+       + -                                 left to right
+
+       << >>                               left to right
+
+       < > <= >=                           left to right
+
+       == !=                               left to right
+
+       &                                   left to right
+
+       ^                                   left to right
+
+       |                                   left to right
+
+       &&                                  left to right
+
+       ||                                  left to right
+
+       ?:                                  right to left
+
+       = *= /= %= += -= <<= >>= &= ^= |=   right to left
+
+       ,                                   left to right
+
+	

@@ -1,0 +1,59 @@
+Shift operators
+---------------
+
+How to set a bit 
+
+	num = num | 1 << pos;
+
+	example: 
+
+		num 		pos 		after
+
+		10		 0		 11
+
+		10		 1		 10
+
+		10		 2		 14
+
+		10		 3		 10
+
+		10	 	 4		 26
+
+
+How to clear a bit
+
+	num = num & ~(1 << pos);
+
+		num 		pos		after
+
+		10		 0		 10
+
+		10		 1		  8
+
+		10		 2		 10
+
+		10		 3		  2
+
+		10		 4		 10
+
+
+How to compliment a bit
+
+	num = num ^ 1 << pos;
+
+		num		pos		after
+
+		10		 0		 11
+
+		10		 1		  8
+
+		10		 2		 14
+
+		10		 3		  2
+
+		10		 4		 26
+
+
+
+
+

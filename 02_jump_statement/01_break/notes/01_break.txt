@@ -1,0 +1,45 @@
+Break
+-----
+
+The break statement is a jump statement used in c to terminate a loop or switch statement prematurely. It causes the program to exit the loop.
+
+
+Use cases
+---------
+
+* Exiting a loop upon a specific condition 
+
+	This is a common scenario where we want the loop to continue iterating until a certain condition is met. Once the condition is true, we cane use break to exit the loop.
+
+* Exiting nested loop
+
+	break cane be used to exit inner loops even if the outer loop's condition hasn't been satisfied yet.
+
+
+Syntax : 
+
+	break;
+
+
+
+break can only exit the loop or switch statement it's directly within.
+
+
+example : 
+
+	
+	switch (op){
+
+		case  1 : printf("sunday\n"); break;
+
+		case  2 : printf("Monday\n"); break;
+
+		default : printf("Invalid\n"); break;
+
+
+	}
+
+
+
+
+
