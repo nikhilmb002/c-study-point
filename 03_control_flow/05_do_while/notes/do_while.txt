@@ -1,0 +1,31 @@
+do-while
+--------
+
+The do while loop is a control flow statement in c that executes a block of code repeatedly until a specified condition becomes false. Unlike the 'while' loop, which tests the condition before executing the loop body, the 'do-while' loop executes the loop body at least once before testing the condition.
+
+syntax : 
+	
+	do {
+		
+		// code block 
+
+	} while (condition);
+
+* the code block enclosed within the 'do' and 'while' statements is executed first, regardless of the condition.
+
+* After the code block executes, the condition is evaluated. If the condition is true, the loop continues; if it's false the loop terminates.
+
+* Since the loop body is executed before the condition check, the do-while loop guarantees that the loop body will execute at least once.
+
+
+Use cases
+---------
+
+* Use the 'do-while' loop when you want to execute a block of code at least once, regardless of the condition.
+
+* It's commonly used in scenarios where you need to prompt the user for input at least once and then continue based on the user's response.
+
+* It's also useful for menu-driven programs, where the menu needs to be displayed at least once before the user makes a choice.
+
+
+Note : when using the do-while loop to avoid infinte loops. Ensure the loop's condition can eventually become false to prevent the program from hanging.
