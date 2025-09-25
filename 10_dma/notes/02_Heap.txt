@@ -1,0 +1,107 @@
+Heap 
+----
+
+Memory which is freely available in RAM for every one at that moment is treated as heap.
+
+When we allocate memory using malloc or calloc function is going to allocated in heap section but with respect to user we can say that this memory has used from extended data section.
+
+What is memory leak ?
+
+If we lose dynamically allocated memory base address is called as a memory leak.
+
+
+How to avoid memory leak?
+
+* take another pointer and assign another dynamically allocated memory base address to another pointer.
+
+* if we don't want to use previously allocated dynamic memory then free it.
+
+
+Dangling pointer
+----------------
+
+After freeing dynamically allocated memory, if still pointer is pointing to previous address is called as a dangling pointer.
+
+{
+	
+	int *p;
+
+	p = malloc(20);
+
+	printf("before p = %u \n", p);
+
+	free(p);
+
+	printf("after p = %u \n", p);
+}
+
+
+How malloc function knows how many bytes memory has to be allocate in a heap ?
+
+we are passing one argument to malloc function which is nothing but size, so that malloc function understand how many byte memory has to allocate in a heap.
+
+
+
+How free() function knows how many byte memory has to free ?
+
+When we allocate dynamic memory using malloc or calloc function at the time its life starts and when we free it using free function life end or whenever program gets terminated at the time life ends.
+
+To avoid the dangling pointer we need to make it null.
+
+
+can we allocate dynamic memory without using malloc or calloc function ?
+
+Yes
+
+
+write realloc equvalent to malloc 
+
+int *p;
+
+p = realloc(0, 10);
+
+
+
+can we deallocate dynamically allocated memory without using free()
+
+yes
+
+
+How to use realloc function equvalent to free ?
+
+int *p;
+
+p = malloc(10);
+
+p = realloc(p, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
