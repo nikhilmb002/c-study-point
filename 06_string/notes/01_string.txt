@@ -1,5 +1,5 @@
-				String
-				------
+String
+------
 
 what is a character array ?
 
@@ -28,6 +28,8 @@ to store '\0' one byte of memory required
 scanf("%s", address);
 
 for scanning spaces : scanf("%[^\n]", address);
+
+get(s) : Also take space while scanning
 
 string length = no. of valid character 
 

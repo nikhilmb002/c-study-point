@@ -1,0 +1,74 @@
+Recursive function
+------------------
+
+In one function defnition if the same function gets called such functions are called as recursive functions. 
+When one function is calling the other function, before the other function begins internally 4 steps takes place
+
+	1. The return address is pushed into the stack. 
+	2. Function stack frame is created. 
+	3. Auto variables & formal arguments and memory gets created. 
+	4. Program counter is filled with 1st instruction of that function then that function execution begins.
+
+Once the function execution completes : 
+
+	1. The stack frame of that function is destroyed. 
+	2. The return address is poped from the stack. 
+	3. The program counter is updated with the return address. 
+	4. Execution continues from the next instruction in the calling function.  
+
+/* 
+
+	#include <stdio.h>
+	void main() {
+		
+		printf("Hello\n");
+		main();
+		printf("Hello\n");
+
+	}
+
+	// Hello will print for certain times and then segmentation fault, 8MB of stack will by main thats why segmentation fault
+
+*/
+
+
+/* 
+	
+	#include <stdio.h>
+	void main() {
+
+		static int i = 0;
+		printf("Hello\n");
+		i++;
+		if (i < 3)
+			main();
+		printf("Hai\n");
+	}
+	
+	output						
+	------						
+	Hello
+	Hello 
+	Hello 
+	Hai
+	Hai
+	Hai
+	
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

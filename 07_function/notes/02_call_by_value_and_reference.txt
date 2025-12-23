@@ -61,33 +61,3 @@ example :
 
 in call by reference case the function can modify actual arguments.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

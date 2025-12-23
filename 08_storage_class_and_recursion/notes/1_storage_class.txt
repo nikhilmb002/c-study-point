@@ -1,0 +1,128 @@
+Storage Class
+-------------
+
+In C, Storage class define where a variable is stored, its lifetime, scope and default initial value. 
+
+There are 4 main storage class in C
+
+1. Auto 
+2. Static
+3. Extern
+4. Register
+
+Auto 
+----
+* Default storage class for local variables. 
+* Stored in stack.
+* Lifetime : inside the block.
+* Scope : Local to the block 
+
+	Example :
+
+		auto int x = 10; // same as : int x = 10;
+
+* auto keyword is optional
+* destroyed when function exits
+* Garbage value if not initialized 
+
+Register
+--------
+* Requests storage in CPU register (if possible)
+* Faster access than memory 
+* Scope : Local to block
+* Lifetime : Block duration 
+
+	Example : register int count;
+
+* Address cannot be accessed.
+* Compiler may ignore the request
+* Ususally used for loop counters
+
+Static
+------
+* Stored in data segment
+* Lifetime : entire program
+* Default value : 0
+* Retains value between function calls 
+* Types 
+	
+	a) Static local variable 
+		
+		void fun() {
+			
+			static int x = 0;
+			x++;
+		}	
+
+	b) Static global variable 
+
+		static int g = 10;
+
+		scope limited to current file 
+		used for data hiding 
+
+Extern
+------
+* Refers to a global variable defined elsewhere 
+* No memory allocation (declaration only)
+* Used for multi file programs
+
+
+	Example : 
+		
+		extern int g;
+
+
+Summary 
+-------
+
+* Static and extern keywords we can use while dealing with function also 
+* By Obeserving storage class keywords compiler decides 4 important properties to that particular variable those 
+
+	1. Default value 
+	2. Memory allocation (where the memory should be allocated)
+	3. Scope (visibility :- till what extend we can access the variable directly)
+	4. Life :- When the memory is going to be allocated when the memory is going to be deallocated. 
+
+
+
+In our program we can declare a variable in 2 places. 
+
+	1. Global variable 
+	2. Local variable 
+
+	If we declare a local variable without providing any storage class compiler consider as auto.
+	We can use auto keyword only for local variables. we cannot use global auto. 
+	Every auto variable is local variable but every local variable may not be auto. 
+
+?) In which case the local variable becomes auto ?
+
+	1. If we write explicitly auto 
+	2. if we don't mention any storage class
+
+Auto variables are stored in respected function stack frame. 
+
+
+
+/* 
+	
+#include <stdio.h>
+static int i = 20;
+void main() {
+	
+	static int i = 10;
+	printf("i = %d\n", i);	
+}
+	
+// if we declare a static variable global as well as local with same name. Local is higher priority.
+// in C language there is no direct way to access global variable if local variable is present with same name. 
+// Static variables are stored in date segment.
+// static int i; is stored in uninitialised data segment also called as BSS (block started by symbols)
+// static int i = 10; is stored in initialised data segment (normally called as data segment).
+// if we declare a global static variable we can access the variable in the entire file. 
+// if we declare a local static variable we can access that in that function itself. 
+// The life of static variables starts when the program is loaded into the RAM for execution. 
+// The life of static variables ends when the program execution ends.
+
+
+*/

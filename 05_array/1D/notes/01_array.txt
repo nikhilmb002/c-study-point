@@ -1,8 +1,7 @@
-								Array
-						                -----
+Array
+-----
 
 Array is one of the derived secondary data type which is collection of similiar types of data which are in adjacent locations.
-
 
 syntax  :
 	

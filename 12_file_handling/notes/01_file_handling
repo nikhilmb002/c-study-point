@@ -1,0 +1,72 @@
+File handling in C 
+------------------
+
+A named collection of data, stored in secondry storage is called as file. 
+
+File is necessary because 
+	
+	* When a program is terminated, the entire data is lost. Storing in a file will preserve your data even if the program terminated. 
+	* If we have to enter a large no.of data, it will take a lot of time to enter them all. If we have file containing all data, we can access the contents of the file using few command in c . 
+	* Operations involved with files are 
+
+		* Open the file 
+		* Read/Write data operations on files
+		* Close the file 
+
+Library functions for files
+
+	fopen()		fgetc()		fput()		fgets()		fputs()		fprintf()	fscanf()	fread()
+	fwrite()	ftell()		fseek()		fclose()	rewind()	remove()
+
+fopen()
+-------
+
+Prototype
+
+	FILE *fopen (const char *path, const char *mode);
+
+Description 
+	
+	fopen() function opens the file whose name in the string pointed by the path and associated of a stream with it. 
+
+Return value : 
+
+	Success : FILE * 	-> Non zero 
+	Failure : NULL 		-> Zero 
+
+	In a fopen() function first argument should be a path, if we provide direct file name it will search it in a present working directory. 
+
+fgetc()
+-------
+
+Prototype 
+
+	int fgetc(FILE *stream);
+
+Description 
+	
+	fgetc() reads the next character from stream and returns it as an unsigned char cast to an int, or returns EOF on end of the file or error.
+
+Return Value 
+
+	Success : Unsigned character cast to integer 
+	Failure : EOF or -1
+
+If we create a file using vi editor, vi editor puts \n at the end of the file. This \n indicated no more character in a file. 
+
+
+fputc()
+-------
+
+Prototype 
+
+	int fputc(int c, FILE *stream);
+
+Description 
+
+	fputc() writes the character c, cast to an unsigned char, to stream.
+
+Return Value 
+
+	Success : character written as unsigned char cast to an int 
+	Failure : EOF or -1

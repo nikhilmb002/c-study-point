@@ -1,0 +1,607 @@
+Compilation Steps in C 
+----------------------
+
+Compilation in C is the process of converting a high-level C program into a machine-executable binary. 
+
+This process happens in multiple well-defined stages, each with a specific responsiblity. 
+
+
+Overall Flow : 
+
+source.c
+
+	-> preprocessor 
+	-> compiler 
+	-> assembler 
+	-> linker 
+	-> executable file 
+
+1. Preprocessing 
+
+	Handled by : C preprocessor 
+	Input file : .c 
+	Ouput file : .i
+
+	The preprocessor performs text-level processing before actual compilation begins. 
+
+	Main tasks of preprocessing: 
+
+		1. Macro expansion 
+		2. Header file inclusion 
+		3. Conditional compilation 
+		4. Comment removal 
+		5. Line continuation handling 
+
+1.1 Macro Expansion 
+
+	Macros defined using #define are replaced with their values. 
+
+	Example : 
+		
+	#define PI 3.14
+	area = PI*r*r;
+
+	After preprocessing : 
+	area = 3.14*r*r;
+
+	Note: 
+		no type checking is done 
+		pure text substitution 
+
+1.2 Header File Inclusion 
+
+	All header files included using #include are copied into the source file. 
+
+	Example : 
+	
+	#include <stdio.h>
+
+	Internally expands to function declarations such as : 
+	int printf(const char *, ...);
+
+	Important : 
+
+		Header files are not compiled seperately 
+		They only provide declarations 
+
+1.3 Conditional  Compilation 
+
+	Used to include or exclude code based on conditions 
+
+	Example : 
+	
+	#ifdef DEBUG 
+	printf("Debug mode");
+	#endif 
+
+1.4 Comment Removal 
+
+	Both types of comments are removed : 
+	
+		* Single-line comments (//)
+		* Multi-line comments (/**/)
+
+Preprocessing command 
+
+	gcc -E p1.c -o p1.i 
+
+2. Compilation
+
+	Handled by : Compiler 
+	Input file : .i
+	Ouput file : Assembly code (.s)
+	
+	The compiler converts preprocessed code into assembly language. 
+	The compilation stage is internally divided into multiple phases. 
+
+2.1 Lexical Analysis 
+
+	Also called : scanner 
+	
+	Function : 
+		
+		Converts source code into tokens 
+	
+	Example code : 
+	
+		int a = 10; 
+
+	Tokens Generated : 
+	
+		<int> <identifier(a)> <=> <constant(10)> <;>
+
+	Types of tokens : 
+		
+			keywords (int, return)
+			identifiers (a, sum)
+			constants (10, 3.14)
+			operators (+, -, =)
+			special symbols (;,{})
+
+	Error detected : 
+
+		Invalid characters 
+
+2.2 Syntax Analysis 
+
+	Also called : parser 
+	
+	Function : 
+
+		Checks grammatical structure of the program 
+		Builds parse tree or syntax tree 
+	
+	Example syntax error : 
+
+	int a = ;
+
+	Error detected : 
+
+	Syntax error (invalid statement structure)
+	
+
+2.3 Semantic Analysis
+	
+	Function : 
+
+		Check meaning and logic of statements 
+		
+	Checks performed : 
+	
+		Variable declared before use 
+		Type compatablity 
+		Function argument matching 
+		Return type checking 
+
+	Example : 
+	
+	int a;
+	a = "hello";
+
+	Error : 
+
+	Type mismatch error 
+
+2.4 Intermediate code Generation 
+
+	Function: 
+
+		Converts source code into machine-independent intermediate code 
+	
+	Example: 
+
+		a = b+c;
+
+	Intermediate code: 
+	
+		t1 = b+c
+		a = t1
+
+	Purpose : 
+
+		Easier optimization 
+		Portability across architectures 
+
+2.5 CODE OPTIMIZATION
+
+	Function:
+
+		Improves performance and memory usage
+		Does NOT change program output
+
+	Types of optimizations:
+
+		Constant folding
+		Dead code elimination
+		Loop optimization
+		Common subexpression elimination
+
+		Example:
+		
+			int x = 10 * 2;
+
+	Optimized code:
+		
+		int x = 20;
+
+2.6 CODE GENERATION
+
+	Function:
+
+		Converts optimized intermediate code into assembly language
+
+	Example assembly:
+		
+		MOV R1, b
+		ADD R1, c
+		MOV a, R1
+
+	Compilation Command:
+		gcc -S program.c
+
+	ASSEMBLING
+
+		Handled by: Assembler (as)
+		Input file : .s
+		Output file: Object file (.o)
+
+	Functions of assembler:
+
+		Converts assembly code into machine code
+		Generates relocation table
+		Generates symbol table
+
+	Object file contains:
+		
+		Machine instructions
+		Unresolved external references
+
+		Example:
+			printf is NOT resolved here
+
+	Assembler Command:
+		gcc -c program.c
+
+	LINKING
+
+		Handled by: Linker (ld)
+		Input files : .o files + libraries
+		Output file : Executable (a.out / program.exe)
+
+The linker is responsible for combining object files and resolving symbols.
+
+4.1 SYMBOL RESOLUTION (IMPORTANT – printf)
+
+	Example:
+		printf("Hello");
+
+	During compilation:
+
+		printf is only declared (from stdio.h)
+		Actual definition is in libc library
+
+	During linking:
+
+		Linker searches libc
+		Resolves address of printf
+		Binds function call to actual implementation
+
+	If library missing:
+		
+		Undefined reference to printf
+
+4.2 TYPES OF LINKING
+
+	STATIC LINKING:
+		
+		Library code copied into executable
+		Larger file size
+		Faster execution
+		No external dependency
+
+	Command:
+		
+		gcc -static program.c
+
+	DYNAMIC LINKING:
+	
+		Library loaded at runtime (.so files)
+		Smaller executable
+		Shared among processes
+
+	Default behavior:
+		gcc program.c
+
+4.3 LINKER ERRORS
+
+	Common linker errors:
+
+		Undefined reference:
+
+			Function declared but not defined
+			Missing library
+	
+	Multiple definition:
+		Same symbol defined in multiple files
+
+	LOADING AND EXECUTION
+
+		Handled by: OS Loader
+
+		Steps:
+
+			Executable loaded into memory
+			Memory segments initialized
+			Stack and heap created
+			Control transferred to main()
+			MEMORY LAYOUT OF A C PROGRAM
+
+	Text Segment:
+
+		Contains executable code
+		Read-only
+
+	Data Segment:
+
+		Initialized global and static variables
+
+	BSS Segment:
+
+		Uninitialized global and static variables
+
+	Heap:
+
+		Dynamic memory allocation (malloc)
+
+	Stack:
+
+		Function calls
+		Local variables
+		Return addresses
+
+	IMPORTANT GCC OPTIONS
+
+		-E → Preprocessing only
+		-S → Generate assembly code
+		-c → Generate object file
+		-o → Output file name
+		-Wall → Enable warnings
+
+	ERRORS AT DIFFERENT STAGES
+
+		Preprocessing:
+		
+			Missing header file
+
+		Compilation:
+
+			Syntax errors
+
+		Type errors
+
+			Linking:
+
+				Undefined reference
+				Multiple definition
+
+			Runtime:
+
+				Segmentation fault
+				Divide by zero
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

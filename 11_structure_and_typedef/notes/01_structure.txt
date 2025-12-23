@@ -5,7 +5,7 @@ structure is one of the user defined datatype. Which is collection of different 
 
 The struct keyword is used to define structure in C.
 
-The items in the structure are called its member and they can eb of any valid data type.
+The items in the structure are called its member and they can be of any valid data type.
 
 
 Syntax : 
@@ -64,6 +64,16 @@ Can we provide storage type to struct variable ?
 Yes
 
 
+
+
+struct one {
+
+	int i = 10;	//invalid
+	static char ch;	//invalid
+};
+
+
+
 Structure Defnition
 -------------------
 
@@ -96,11 +106,6 @@ Structure Defnition
 	}
 
 	struct tagname variable1, variable2, ...........;
-
-
-
-
-
 
 
 Nested Structure

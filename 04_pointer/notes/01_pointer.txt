@@ -1,9 +1,7 @@
-		 					Pointers
-						`	--------
+Pointers
+--------
 
 pointer is one of the secondary derived datatype which holds address of another variable through which we can access the data indirectly.
-
-
 
 syntax to declare pointer : 
 
@@ -52,15 +50,12 @@ int i = 10;
 
 int *p;
 
-p = &i;        -> error
+p = &i;        -> no error
 
 *p = 30;       -> no error
 
 
 -----------------------------------
-
-
-
 
 int i = 10;
 
@@ -73,9 +68,6 @@ p = &i;        -> no error
 
 
 -------------------------------------
-
-
-
 
 int i = 10;
 
@@ -123,8 +115,6 @@ when dereferencing int pointer 4 bytes get fetched.
 when we increment int pointer 4 bytes get incremented.
 
 
-
-
 Void pointer (Generic pointer)
 ------------------------------
 
@@ -132,6 +122,13 @@ pointer that have no datatype associated with them.
 
 void pointer should be explicitly type casted while dereferencing it.
 
+
+Dangling Pointer
+----------------
+
+A dangling pointer in C is a pointer that points to a memory location which is freed or no longer valid.
+
+Using dangling pointer can cause undefined behaviour, such as crashes or incorrect results. 
 
 Null Pointer
 ------------

@@ -1,4 +1,6 @@
-C is a high-level, procedural-oriented programing language developed by Dennis Ritchie at Bell Laboratories in 1972. Originally crafted for the programing of the unix operating system. C programs are known for their speed and efficiency, making it a preffered language for perfomance-critical applications.
+C is a high-level, procedural-oriented programing language developed by Dennis Ritchie at Bell Laboratories in 1972. 
+Originally crafted for the programing of the unix operating system. 
+C programs are known for their speed and efficiency, making it a preffered language for perfomance-critical applications.
 
 
 Basic Structure of C Program

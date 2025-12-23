@@ -1,0 +1,63 @@
+_________________________________________________________________________________
+|	char s[] = "abcd"		|	char *p = "abcd"		|	
+|---------------------------------------|---------------------------------------|
+|					|					|
+|* What is the type of s ?		|* What is the type of p ?		|
+|					|					|
+|	char array			|	char pointer			|
+|					|					|
+|* What is the size of s ?		|* What is the size of p ?		|
+|					|					|
+|	5 bytes 			|	 8 bytes			|
+|					|					|
+|* Array name represent address		|* abcd -> string constant		|
+|					|  string constant represent address	|
+|					|					|
+|* How much of memory is involved ?	|* How much of memory involved ?	|
+|					|					|
+|	5 bytes 			|	8+5 = 13			|
+|					|					|
+|* considering address of s = 100 	|* Considering of p = 500 and &p = 200  |
+|					|					|
+|	s+1 = 101			|	p+1 = 501			|
+|      &s+1 = 105			|      &p+1 = 208			|
+|	s++ -> error (const pointer)	|	p++ -> yes possible		|
+|					|					|
+|* printf("%s\n", s);			|* printf(%s\n", p);			|
+|	output is abcd			|	output is abcd			|
+|					|					|
+|* printf("%c\n", s[1]);		|* printf("%c\n", p[1]);		|
+|	output is b			| 	output is b			|
+|					|					|
+|* printf("%c\n", *(s+1));		|* printf("%c\n", *(p+1));		|
+|	output is b			|	output is b			|
+|					|					|
+| s[1] = 'm';				| p[1] = 'M'; // segmentation fault	|
+| printf("%s\n", s); //amcd		| 				  	|
+| 					| when we initialise a character pointer|
+|					| with one string it is stored in the   |
+|					| text section also called as read only |
+|					| memory in GCC.			|
+|					| Segmentation fault not only come when	|
+|					| we are trying to access other programs| 
+|					| memory but also comes when we are 	|
+|					| modify our own read only section.	|
+| s = "mnop"; (syntax error), string is |					|
+| 	    const pointer. s is address | p = "mnop";				|
+|	    can modify by each element. |	pointer points to some other	|
+|					|	address				|
+|					|					|
+| s = p; -> error 			| p = s; 				|
+| 					|	after this pointer holds address|
+|					|		of s			|
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

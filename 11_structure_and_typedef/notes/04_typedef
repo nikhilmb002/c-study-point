@@ -1,0 +1,43 @@
+Typedef
+-------
+
+* Typedef is one of the datatype which is used to provide another name to existing datatype. 
+* To make understanding of variable or datatype easy. 
+
+syntax : 
+
+	typedef old_datatype_name new_name;
+
+Note: Newname should not be any keyword 
+
+
+/* 
+	#include <stdio.h>
+	typedef int INTEGER;
+	void main() {
+		
+		INTEGER i;
+		printf("%d\n", sizeof(i));	// 4
+	}
+
+*/
+
+/* 
+	
+	#include <stdio.h>
+	typedef int *p;	// p is another name to int * 
+	void main() {
+
+		p q, *r; // q is single pointer 	
+	}
+
+*/ 
+
+/* 
+	#include <stdio.h>
+	typedef int a[5];	// a is another name of int [5] 
+	void main() {
+
+		a b, c[5]; // c is 2D array 
+	}
+

@@ -1,0 +1,96 @@
+#include <stdio.h>
+void abc(void);
+void def(void);
+void main() {
+
+	int i = 10, j = 20;
+	abc();
+}
+
+void abc(void) {
+
+	int k = 30, l = 40;
+	def();
+}
+
+void def(void) {
+
+	int m = 10, n = 60;
+}
+
+
+/* 
+
+    ^	|-------------------------------|
+    |	|	i = 10, j = 20		| <--- stack for main, 1st stack
+    |	|-------------------------------| 
+    |	|	k = 30, l = 40		| <--- stack for abc, 2nd stack
+	|-------------------------------|
+  8 MB	|	m = 10, n = 60		| <--- stack for def, 3rd stack 
+  stack |-------------------------------|
+    |	|				|
+    |	|				|	Last in First out 
+    |	|				|		
+    |	|				|
+    |	|				|
+    |	|				|		
+    -	|-------------------------------|
+
+
+In the above example program when _start calls the main then main function stack frame gets created. 
+In that stack frame i & j variables memory gets allocated.
+When main calls abc then abc function stack frame gets started. 
+In that stack frame k & l variables memory gets allocated. 
+When abc calls def then def function stack frame gets created. 
+In that stack frame m and n variables memory gets allocated. 
+
+*/
+
+/* 
+
+#include <stdio.h>
+void main() {
+	
+	int i = 10, j = 20;
+	abc();
+	def();
+}
+
+void abc(void) {
+	
+	int k = 30, l = 40;
+}
+
+void def(void) {
+	
+	int m = 60, n = 60;
+}
+
+
+1. main stack is created 
+2. abc stack is created 
+3. abc stack is deallocated 
+4. def stack is created 
+5. def is deallocated 
+6. main is deallocated 
+
+*/
+
+
+/* 
+
+#include <stdio.h>
+void main() {
+	
+	{
+		int i = 10;
+	}
+	
+	printf("i = %d\n", i);	// Error 
+}
+
+Life of an auto variable starts when the function stack frame is created and life ends when the function stack frame gets deallocated 
+
+When we are designing the function we shouldn't return the address of auto variable which we declared inside function. Why because the life of an autovariable ends when the function execution ends. 
+
+*/

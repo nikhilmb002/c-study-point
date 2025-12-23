@@ -1,0 +1,47 @@
+Multiple file compilation
+-------------------------
+
+m1.c 
+
+#include <stdio.h>
+void display(char*);
+void main() {
+	
+	display("hello\n");
+}
+
+m2.c
+
+#include <stdio.h>
+void display(char *p) {
+
+	printf("%s\n", p);
+}
+
+cc m1.c m2.c
+
+		
+			m1.c					m2.c
+
+Preprocessor 		m1.i					m2.i
+
+Translator		m1.s					m2.s
+
+Assembler		m1.o					m2.o
+			 |					  |
+			 |________________ Linker_________________|
+					     |
+					    a.out
+
+
+When we supply multiple files to compiler make sure that only one file should have main.
+If we should supply multiple file to compiler each file seperately preprocessed and seperately & seperately assembled.
+In Linker stage all these files and libraries get linked and linker generates 1 executable file. 
+By default functions are extern. 
+Before the function defnition if we write a static keyword that function is called static function.
+Static functions are visible inside the same source file only. Where non static function (extern) where as non static are visible inside the same file as well as outside also.
+Without declaring function if we call the function in gcc translator generators warning. 
+If function defnition is not found still we are calling that function linker generates error.
+
+
+

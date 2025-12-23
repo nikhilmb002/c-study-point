@@ -30,12 +30,9 @@ Types of function
 2. User defined function 
 
 
-
-
 syntax for declaring the function 
 
 	return_type function_name(arguments);
-
 
 
 Depends on returntype and arguments functions can be implemented in 4 different types 
@@ -82,131 +79,8 @@ Depends on returntype and arguments functions can be implemented in 4 different 
 
 
 
-
-
-
 while calling the function whatever the information we are passing called as original arguments or actual arguments. In the function defnition with what we are catching that is called as formal arguments.
 
 
 Actual argument name and formal argument may  be or may not be the same.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
